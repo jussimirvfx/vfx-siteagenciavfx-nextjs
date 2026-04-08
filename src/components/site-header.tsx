@@ -20,9 +20,6 @@ export function SiteHeader() {
   const headerRef = useRef<HTMLElement>(null);
 
   const isHome = pathname === "/";
-  const isCaseFumil = pathname === "/cases/fumil";
-  const isServicePage = pathname.startsWith("/solucoes/");
-  const isTransparent = isHome || isCaseFumil || isServicePage;
 
   const items = isHome
     ? [
@@ -38,17 +35,13 @@ export function SiteHeader() {
     if (scrolled !== isScrolledRef.current) {
       isScrolledRef.current = scrolled;
       headerRef.current?.classList.toggle(
-        "site-header--home-scrolled",
+        "site-header--scrolled",
         scrolled,
       );
     }
   }, []);
 
   useEffect(() => {
-    if (!isTransparent) {
-      return;
-    }
-
     const frame = window.requestAnimationFrame(updateScrollClass);
     window.addEventListener("scroll", updateScrollClass, { passive: true });
 
@@ -56,50 +49,23 @@ export function SiteHeader() {
       window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", updateScrollClass);
     };
-  }, [isTransparent, updateScrollClass]);
-
-  const buttonClass = isHome
-    ? "button--header-home"
-    : isCaseFumil
-      ? "button--whatsapp"
-      : "button--primary";
+  }, [updateScrollClass]);
 
   return (
     <header
-      className={`site-header${isTransparent ? " site-header--home" : ""}`}
+      className="site-header site-header--hidden"
       ref={headerRef}
     >
       <div className="section__inner site-header__inner">
         <Link aria-label="VFX Videos" className="site-header__brand" href="/">
           <span className="site-header__logo-image">
-            {isTransparent ? (
-              <>
-                <Image
-                  alt="Logo da VFX Videos"
-                  className="site-header__logo-light"
-                  fill
-                  priority
-                  sizes="180px"
-                  src="/assets/brand/Agencia-VFX-Logo-FundosEscuros-Alt-400x154.png"
-                />
-                <Image
-                  alt=""
-                  aria-hidden="true"
-                  className="site-header__logo-dark"
-                  fill
-                  sizes="180px"
-                  src="/assets/brand/logo-original.png"
-                />
-              </>
-            ) : (
-              <Image
-                alt="Logo da VFX Videos"
-                fill
-                priority
-                sizes="180px"
-                src="/assets/brand/logo-original.png"
-              />
-            )}
+            <Image
+              alt="Logo da VFX Videos"
+              fill
+              priority
+              sizes="180px"
+              src="/assets/brand/logo-original.png"
+            />
           </span>
         </Link>
 
@@ -126,7 +92,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="site-header__actions">
-          <WhatsAppLink className={`button ${buttonClass}`}>
+          <WhatsAppLink className="button button--header-cta">
             {isHome ? "Fale com um especialista" : "Falar no WhatsApp"}
           </WhatsAppLink>
           <button
@@ -144,7 +110,7 @@ export function SiteHeader() {
       </div>
 
       <MobileMenu
-        buttonClass={buttonClass}
+        buttonClass="button--header-cta"
         buttonLabel={isHome ? "Fale com um especialista" : "Chamar no WhatsApp"}
         isOpen={isOpen}
         items={items}
