@@ -6501,15 +6501,15 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 999px;
-  background: #25d366;
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+  background: linear-gradient(135deg, #34d22f 0%, #45d92f 100%);
+  box-shadow: 0 6px 24px rgba(52, 210, 47, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: wpp-pulse 2s ease-in-out infinite;
 }
 
 .wpp-float__btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 8px 32px rgba(52, 210, 47, 0.5);
 }
 
 @keyframes wpp-bubble-in {
@@ -6524,6 +6524,6 @@ body {
 }
 
 @keyframes wpp-pulse {
-  0%, 100% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4); }
-  50% { box-shadow: 0 6px 32px rgba(37, 211, 102, 0.6); }
+  0%, 100% { box-shadow: 0 6px 24px rgba(52, 210, 47, 0.4); }
+  50% { box-shadow: 0 6px 32px rgba(52, 210, 47, 0.6); }
 }
