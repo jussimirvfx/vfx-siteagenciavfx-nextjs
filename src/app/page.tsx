@@ -1,13 +1,21 @@
 import type { ReactNode } from "react";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 
-import { LottiePlayer } from "@/components/lottie-player";
+import { LazyVideo } from "@/components/lazy-video";
 import { Reveal } from "@/components/reveal";
-import { ShowcaseReveal } from "@/components/showcase-reveal";
 import { VideoDialog } from "@/components/video-dialog";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import { buildMetadata } from "@/lib/seo";
+
+const LottiePlayer = dynamic(() =>
+  import("@/components/lottie-player").then((m) => m.LottiePlayer),
+);
+
+const ShowcaseReveal = dynamic(() =>
+  import("@/components/showcase-reveal").then((m) => m.ShowcaseReveal),
+);
 
 export const metadata = buildMetadata({
   title: "Agência VFX | Videomarketing de Performance",
@@ -74,19 +82,19 @@ function ScribbleText({
 const partnerLogos = [
   {
     title: "Accredited Agency",
-    image: "/assets/solutions/accredited-agency.png",
+    image: "/assets/solutions/accredited-agency.webp",
   },
   {
     title: "Top Video Marketing Companies",
-    image: "/assets/solutions/top-companies.png",
+    image: "/assets/solutions/top-companies.webp",
   },
   {
     title: "Meta Business Partner",
-    image: "/assets/solutions/meta-partner.png",
+    image: "/assets/solutions/meta-partner.webp",
   },
   {
     title: "Google Partner",
-    image: "/assets/solutions/google-partner.png",
+    image: "/assets/solutions/google-partner.webp",
   },
 ] as const;
 
@@ -105,7 +113,7 @@ const featureSections: ReadonlyArray<{
     title: "Atinja seus potenciais clientes onde eles estão: online",
     body:
       "Independente do público da sua empresa ser empresarial ou cliente final, hoje é possível atingir esse público utilizando as principais plataformas de anúncios do marketing digital.",
-    image: "/assets/home/social-proof.png",
+    image: "/assets/home/social-proof.webp",
     imageAlt: "Painel com resultados de campanhas digitais",
     reverse: false,
   },
@@ -113,10 +121,10 @@ const featureSections: ReadonlyArray<{
     title: "Vídeos + Anúncios + Whatsapp = A combinação de marketing perfeita.",
     body:
       "Utilize vídeos, que são a melhor ferramenta de vendas da atualidade, combinados com anúncios para mostrar esses vídeos ao seu público e deixe a automação do WhatsApp fazer o atendimento inicial e a qualificação desses leads.",
-    image: "/assets/reference/celular-bg-video-bot-1.png",
+    image: "/assets/reference/celular-bg-video-bot-1.webp",
     imageAlt: "Celular com automação de WhatsApp",
     video: "/assets/reference/agenciavfx_videobot_07.mp4",
-    poster: "/assets/reference/celular-bg-video-bot-1.png",
+    poster: "/assets/reference/celular-bg-video-bot-1.webp",
     reverse: true,
     surface: "soft",
   },
@@ -247,14 +255,14 @@ const portfolioItems = [
 ] as const;
 
 const enterpriseLogos = [
-  { title: "Chilli Beans", image: "/assets/solutions/chilli.png", width: 202, height: 102 },
-  { title: "CyberArk", image: "/assets/solutions/cyberark.png", width: 194, height: 102 },
-  { title: "Ambev", image: "/assets/solutions/ambev.png", width: 180, height: 92 },
-  { title: "Gerdau", image: "/assets/solutions/gerdau.png", width: 196, height: 92 },
-  { title: "Unicred", image: "/assets/solutions/unicred.png", width: 174, height: 92 },
-  { title: "Campari", image: "/assets/solutions/campari.png", width: 176, height: 92 },
-  { title: "Dupont", image: "/assets/solutions/dupont.png", width: 172, height: 92 },
-  { title: "Senior", image: "/assets/solutions/senior.png", width: 182, height: 92 },
+  { title: "Chilli Beans", image: "/assets/solutions/chilli.webp", width: 202, height: 102 },
+  { title: "CyberArk", image: "/assets/solutions/cyberark.webp", width: 194, height: 102 },
+  { title: "Ambev", image: "/assets/solutions/ambev.webp", width: 180, height: 92 },
+  { title: "Gerdau", image: "/assets/solutions/gerdau.webp", width: 196, height: 92 },
+  { title: "Unicred", image: "/assets/solutions/unicred.webp", width: 174, height: 92 },
+  { title: "Campari", image: "/assets/solutions/campari.webp", width: 176, height: 92 },
+  { title: "Dupont", image: "/assets/solutions/dupont.webp", width: 172, height: 92 },
+  { title: "Senior", image: "/assets/solutions/senior.webp", width: 182, height: 92 },
 ] as const;
 
 const testimonials = [
@@ -318,7 +326,7 @@ const expertCards = [
     title: "Animadores / Editores de Vídeo",
     description:
       "Profissionais que dão vida aos projetos e criam vídeos capazes de capturar a atenção do público alvo.",
-    image: "/assets/home/team.png",
+    image: "/assets/home/team.webp",
     iconPath:
       "M22.167 24.667h-20c-0.367 0-0.667-0.3-0.667-0.667v-12c0-0.367 0.3-0.667 0.667-0.667h20c0.367 0 0.667 0.3 0.667 0.667v12c0 0.367-0.3 0.667-0.667 0.667zM2.833 23.333h18.667v-10.667h-18.667v10.667zM30.167 27.333c-0.071 0-0.14-0.012-0.211-0.033l-8-2.667c-0.271-0.088-0.456-0.347-0.456-0.633v-12c0-0.287 0.185-0.541 0.456-0.633l8-2.667c0.204-0.068 0.425-0.031 0.6 0.089 0.175 0.127 0.277 0.325 0.277 0.537v17.333c0 0.216-0.103 0.417-0.277 0.54-0.115 0.091-0.251 0.133-0.389 0.133zM22.833 23.521l6.667 2.221v-15.483l-6.667 2.223v11.039zM7.167 12c-3.307 0-6-2.693-6-6s2.693-6 6-6 6 2.693 6 6-2.693 6-6 6zM7.167 1.333c-2.573 0-4.667 2.093-4.667 4.667s2.093 4.667 4.667 4.667 4.667-2.093 4.667-4.667-2.093-4.667-4.667-4.667zM17.833 12c-3.307 0-6-2.693-6-6s2.693-6 6-6 6 2.693 6 6-2.693 6-6 6zM17.833 1.333c-2.573 0-4.667 2.093-4.667 4.667s2.093 4.667 4.667 4.667 4.667-2.093 4.667-4.667-2.093-4.667-4.667-4.667zM2.751 32c-0.195 0-0.393-0.088-0.527-0.255-0.227-0.293-0.175-0.711 0.116-0.937l9.417-7.333c0.291-0.227 0.708-0.175 0.935 0.117s0.175 0.708-0.115 0.935l-9.417 7.333c-0.124 0.095-0.267 0.14-0.409 0.14zM22.917 32c-0.14 0-0.287-0.045-0.411-0.14l-9.417-7.333c-0.289-0.227-0.341-0.641-0.115-0.935 0.227-0.292 0.641-0.344 0.935-0.117l9.417 7.333c0.291 0.227 0.343 0.644 0.116 0.937-0.133 0.167-0.328 0.255-0.525 0.255zM12.833 32c-0.367 0-0.667-0.3-0.667-0.667v-6.667c0-0.367 0.3-0.667 0.667-0.667s0.667 0.3 0.667 0.667v6.667c0 0.367-0.3 0.667-0.667 0.667z",
   },
@@ -388,7 +396,6 @@ export default function HomePage() {
             <Image
               alt="Apresentação em vídeo da Agência VFX"
               fill
-              priority
               sizes="(max-width: 900px) 100vw, 1000px"
               src="/assets/reference/fachada-vfx-wide-01.jpg"
             />
@@ -465,18 +472,12 @@ export default function HomePage() {
           <div className="section__inner homev2__feature-inner">
             <Reveal as="div" className="homev2__feature-media" variant="grow">
               {section.video ? (
-                <video
-                  aria-label={section.imageAlt}
-                  autoPlay
+                <LazyVideo
+                  ariaLabel={section.imageAlt}
                   className="homev2__feature-video"
-                  loop
-                  muted
-                  playsInline
                   poster={section.poster}
-                  preload="metadata"
-                >
-                  <source src={section.video} type="video/mp4" />
-                </video>
+                  src={section.video}
+                />
               ) : (
                 <Image
                   alt={section.imageAlt}
@@ -519,18 +520,12 @@ export default function HomePage() {
       ))}
 
       <section className="homev2__reveal-band">
-        <video
-          aria-hidden="true"
-          autoPlay
+        <LazyVideo
+          ariaHidden
           className="homev2__reveal-video"
-          loop
-          muted
-          playsInline
-          preload="metadata"
           poster="/assets/reference/fundobg-agencia5.jpg"
-        >
-          <source src="/assets/reference/reveal-loop.mp4" type="video/mp4" />
-        </video>
+          src="/assets/reference/reveal-loop.mp4"
+        />
         <div className="homev2__reveal-overlay" />
         <div className="section__inner homev2__reveal-inner">
           <Reveal delay={60} variant="fade-up">
@@ -773,10 +768,12 @@ export default function HomePage() {
             <div className="homev2__chilli-play">
               <VideoDialog
                 buttonLabel="Assistir case"
-                className="homev2__play-button homev2__play-button--dark"
+                className="homev2__play-button homev2__play-button--hero"
                 embedUrl="https://www.youtube.com/embed/ylHH4BTcKiA?autoplay=1&rel=0"
                 title="Parceria de sucesso: VFX e Chilli Beans"
-              />
+              >
+                <span className="homev2__play-icon" />
+              </VideoDialog>
             </div>
           </Reveal>
         </div>

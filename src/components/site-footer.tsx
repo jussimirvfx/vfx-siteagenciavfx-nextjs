@@ -16,7 +16,7 @@ export function SiteFooter() {
             <h3>Soluções</h3>
             <ul>
               <li>
-                <Link href="/#services">Vídeos Marketing</Link>
+                <Link href="/solucoes/videos-marketing">Vídeos Marketing</Link>
               </li>
               <li>
                 <Link href="/#services">Campanhas de Anúncios</Link>

@@ -65,14 +65,14 @@ export const homePage = {
     { value: "360°", label: "operacao unindo criacao, midia e conversao" },
   ],
   partnerLogos: [
-    { title: "Ambev", image: "/assets/solutions/ambev.png", alt: "Logo da Ambev" },
-    { title: "Campari", image: "/assets/solutions/campari.png", alt: "Logo da Campari" },
-    { title: "Chilli Beans", image: "/assets/solutions/chilli.png", alt: "Logo da Chilli Beans" },
-    { title: "CyberArk", image: "/assets/solutions/cyberark.png", alt: "Logo da CyberArk" },
-    { title: "Dupont", image: "/assets/solutions/dupont.png", alt: "Logo da Dupont" },
-    { title: "Gerdau", image: "/assets/solutions/gerdau.png", alt: "Logo da Gerdau" },
-    { title: "Senior", image: "/assets/solutions/senior.png", alt: "Logo da Senior" },
-    { title: "Unicred", image: "/assets/solutions/unicred.png", alt: "Logo da Unicred" },
+    { title: "Ambev", image: "/assets/solutions/ambev.webp", alt: "Logo da Ambev" },
+    { title: "Campari", image: "/assets/solutions/campari.webp", alt: "Logo da Campari" },
+    { title: "Chilli Beans", image: "/assets/solutions/chilli.webp", alt: "Logo da Chilli Beans" },
+    { title: "CyberArk", image: "/assets/solutions/cyberark.webp", alt: "Logo da CyberArk" },
+    { title: "Dupont", image: "/assets/solutions/dupont.webp", alt: "Logo da Dupont" },
+    { title: "Gerdau", image: "/assets/solutions/gerdau.webp", alt: "Logo da Gerdau" },
+    { title: "Senior", image: "/assets/solutions/senior.webp", alt: "Logo da Senior" },
+    { title: "Unicred", image: "/assets/solutions/unicred.webp", alt: "Logo da Unicred" },
   ],
   valuePillars: [
     {

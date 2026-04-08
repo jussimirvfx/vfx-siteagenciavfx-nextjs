@@ -1,20 +1,28 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import { siteConfig } from "@/lib/site-config";
 
+const MobileMenu = dynamic(
+  () => import("@/components/mobile-menu").then((m) => m.MobileMenu),
+);
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [isHomeScrolled, setIsHomeScrolled] = useState(false);
+  const isScrolledRef = useRef(false);
+  const headerRef = useRef<HTMLElement>(null);
+
   const isHome = pathname === "/";
   const isCaseFumil = pathname === "/cases/fumil";
-  const isTransparent = isHome || isCaseFumil;
+  const isServicePage = pathname.startsWith("/solucoes/");
+  const isTransparent = isHome || isCaseFumil || isServicePage;
 
   const items = isHome
     ? [
@@ -24,44 +32,74 @@ export function SiteHeader() {
       ]
     : siteConfig.navigation;
 
+  const updateScrollClass = useCallback(() => {
+    const scrolled = window.scrollY > 24;
+
+    if (scrolled !== isScrolledRef.current) {
+      isScrolledRef.current = scrolled;
+      headerRef.current?.classList.toggle(
+        "site-header--home-scrolled",
+        scrolled,
+      );
+    }
+  }, []);
+
   useEffect(() => {
     if (!isTransparent) {
       return;
     }
 
-    const updateHeaderState = () => {
-      setIsHomeScrolled(window.scrollY > 24);
-    };
-
-    const frame = window.requestAnimationFrame(updateHeaderState);
-    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    const frame = window.requestAnimationFrame(updateScrollClass);
+    window.addEventListener("scroll", updateScrollClass, { passive: true });
 
     return () => {
       window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("scroll", updateScrollClass);
     };
-  }, [isTransparent]);
+  }, [isTransparent, updateScrollClass]);
+
+  const buttonClass = isHome
+    ? "button--header-home"
+    : isCaseFumil
+      ? "button--whatsapp"
+      : "button--primary";
 
   return (
     <header
-      className={`site-header${isTransparent ? " site-header--home" : ""}${
-        isTransparent && isHomeScrolled ? " site-header--home-scrolled" : ""
-      }`}
+      className={`site-header${isTransparent ? " site-header--home" : ""}`}
+      ref={headerRef}
     >
       <div className="section__inner site-header__inner">
         <Link aria-label="VFX Videos" className="site-header__brand" href="/">
           <span className="site-header__logo-image">
-            <Image
-              alt="Logo da VFX Videos"
-              fill
-              priority
-              sizes="180px"
-              src={
-                isTransparent && !isHomeScrolled
-                  ? "/assets/brand/Agencia-VFX-Logo-FundosEscuros-Alt-400x154.png"
-                  : "/assets/brand/logo-original.png"
-              }
-            />
+            {isTransparent ? (
+              <>
+                <Image
+                  alt="Logo da VFX Videos"
+                  className="site-header__logo-light"
+                  fill
+                  priority
+                  sizes="180px"
+                  src="/assets/brand/Agencia-VFX-Logo-FundosEscuros-Alt-400x154.png"
+                />
+                <Image
+                  alt=""
+                  aria-hidden="true"
+                  className="site-header__logo-dark"
+                  fill
+                  sizes="180px"
+                  src="/assets/brand/logo-original.png"
+                />
+              </>
+            ) : (
+              <Image
+                alt="Logo da VFX Videos"
+                fill
+                priority
+                sizes="180px"
+                src="/assets/brand/logo-original.png"
+              />
+            )}
           </span>
         </Link>
 
@@ -88,18 +126,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="site-header__actions">
-          <WhatsAppLink
-            className={`button ${
-              isHome
-                ? isHomeScrolled
-                  ? "button--header-home-top"
-                  : "button--header-home"
-                : isCaseFumil
-                  ? "button--whatsapp"
-                  : "button--primary"
-            }`}
-          >
-            {isHome ? "Agende uma reunião" : "Falar no WhatsApp"}
+          <WhatsAppLink className={`button ${buttonClass}`}>
+            {isHome ? "Fale com um especialista" : "Falar no WhatsApp"}
           </WhatsAppLink>
           <button
             aria-expanded={isOpen}
@@ -115,32 +143,13 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div
-        className={`site-header__mobile-panel${isOpen ? " is-open" : ""}`}
-      >
-        <nav aria-label="Menu mobile">
-          <ul className="site-header__mobile-list">
-            {items.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} onClick={() => setIsOpen(false)}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <WhatsAppLink
-          className={`button button--full ${
-            isHome
-              ? isHomeScrolled
-                ? "button--header-home-top"
-                : "button--header-home"
-              : "button--primary"
-          }`}
-        >
-          {isHome ? "Agende uma reunião" : "Chamar no WhatsApp"}
-        </WhatsAppLink>
-      </div>
+      <MobileMenu
+        buttonClass={buttonClass}
+        buttonLabel={isHome ? "Fale com um especialista" : "Chamar no WhatsApp"}
+        isOpen={isOpen}
+        items={items}
+        onClose={() => setIsOpen(false)}
+      />
     </header>
   );
 }

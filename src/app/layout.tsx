@@ -20,16 +20,20 @@ import "./globals.css";
 const displayFont = Plus_Jakarta_Sans({
   variable: "--font-display",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const bodyFont = Open_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const accentFont = Caveat({
   variable: "--font-accent",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -64,7 +68,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${displayFont.variable} ${bodyFont.variable} ${accentFont.variable}`}
     >
-      <head />
+      <head>
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://unpkg.com" />
+      </head>
       <body>
         <Schema id="schema-organization" data={buildOrganizationSchema()} />
         <Schema id="schema-website" data={buildWebsiteSchema()} />
