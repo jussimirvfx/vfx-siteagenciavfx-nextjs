@@ -105,7 +105,8 @@ export function ShowcaseReveal({
                 alt="Equipe da Agencia VFX"
                 fill
                 priority={false}
-                sizes="100vw"
+                quality={85}
+                sizes="min(100vw, 2560px)"
                 src={imageSrc}
               />
 
