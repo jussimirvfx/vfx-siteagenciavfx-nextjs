@@ -2509,29 +2509,16 @@ body {
   }
 }
 
-.button--header-home {
+.button--header-home,
+.button--header-home-top {
   min-height: 38px;
   padding: 0 18px;
-  border-radius: 999px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.button--header-home-top,
-.site-header--home-scrolled .button--header-home {
-  min-height: 38px;
-  padding: 0 18px;
-  border-radius: 999px;
+  border-radius: 14px;
   color: #fff;
   background: #25d366;
   font-size: 0.88rem;
   font-weight: 700;
-  opacity: 1;
-  pointer-events: auto;
-  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.28);
 }
 
 .site-header--home {
