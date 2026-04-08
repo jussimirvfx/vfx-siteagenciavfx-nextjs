@@ -5,6 +5,7 @@ import {
   Open_Sans,
   Plus_Jakarta_Sans,
 } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 import { Schema } from "@/components/schema";
@@ -67,11 +68,19 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${displayFont.variable} ${bodyFont.variable} ${accentFont.variable}`}
     >
       <head>
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://unpkg.com" />
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        )}
       </head>
       <body>
         <Schema id="schema-organization" data={buildOrganizationSchema()} />

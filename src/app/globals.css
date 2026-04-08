@@ -1737,8 +1737,8 @@ body {
 
 .button--whatsapp {
   color: #fff;
-  background: linear-gradient(180deg, #00d61f 0%, #00bf24 100%);
-  box-shadow: 0 18px 32px rgba(0, 189, 37, 0.22);
+  background: #3ac63c;
+  box-shadow: 0 18px 32px rgba(58, 198, 60, 0.22);
 }
 
 .button--hero-primary,
@@ -1770,8 +1770,6 @@ body {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
   z-index: 50;
 }
 
@@ -1804,8 +1802,8 @@ body {
 }
 
 .site-header__logo-image {
-  width: 40px;
-  height: 24px;
+  width: 120px;
+  height: 40px;
 }
 
 .site-header__logo-image img,
@@ -2531,12 +2529,12 @@ body {
 .button--header-cta {
   min-height: 38px;
   padding: 0 18px;
-  border-radius: 14px;
+  border-radius: 999px;
   font-size: 0.88rem;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(135deg, #34d22f 0%, #45d92f 100%);
-  box-shadow: 0 8px 20px rgba(52, 210, 47, 0.28);
+  background: #3ac63c;
+  box-shadow: 0 8px 20px rgba(58, 198, 60, 0.28);
 }
 
 
@@ -2982,8 +2980,8 @@ body {
   min-height: 50px;
   min-width: 290px;
   padding: 0 28px;
-  background: linear-gradient(135deg, #34d22f 0%, #45d92f 100%);
-  box-shadow: 0 20px 42px rgba(39, 179, 53, 0.32);
+  background: #3ac63c;
+  box-shadow: 0 20px 42px rgba(58, 198, 60, 0.32);
 }
 
 .homev2__button--secondary {
@@ -3165,7 +3163,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 104px;
+  min-height: 130px;
 }
 
 .homev2__partner-item img,
@@ -3173,7 +3171,7 @@ body {
   width: auto;
   max-width: 95%;
   height: auto;
-  max-height: 100px;
+  max-height: 130px;
   object-fit: contain;
 }
 
@@ -3415,6 +3413,7 @@ body {
   text-align: center;
 }
 
+.homev2__reveal-band > .lazy-video-wrap,
 .homev2__reveal-video,
 .homev2__reveal-overlay {
   position: absolute;
@@ -4304,7 +4303,7 @@ body {
   .homev2__partner-item img,
   .homev2__enterprise-item img {
     max-width: 95%;
-    max-height: 90px;
+    max-height: 110px;
   }
 
   .homev2__trust-card-animation {
@@ -5672,7 +5671,7 @@ body {
   min-height: 50px;
   padding: 0 32px;
   border: none;
-  border-radius: 14px;
+  border-radius: 999px;
   background: #fff;
   color: var(--primary-strong);
   font-family: var(--font-display), sans-serif;
@@ -5780,8 +5779,8 @@ body {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(8, 23, 50, 0.7) 0%,
-    rgba(8, 23, 50, 0.9) 100%
+    rgba(47, 134, 246, 0.85) 0%,
+    rgba(47, 134, 246, 0.92) 100%
   );
 }
 
@@ -6166,7 +6165,7 @@ body {
 /* ── Final CTA ── */
 .sv-cta {
   padding: 120px 0;
-  background: var(--surface-dark);
+  background: linear-gradient(180deg, rgba(47, 134, 246, 0.92) 0%, rgba(47, 134, 246, 0.85) 100%);
   text-align: center;
 }
 
@@ -6200,20 +6199,20 @@ body {
   padding: 0 42px;
   margin-top: 12px;
   border: none;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border-radius: 999px;
+  background: #3ac63c;
   color: #fff;
   font-family: var(--font-display), sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 18px 32px rgba(58, 198, 60, 0.22);
 }
 
 .sv-cta__button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 44px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 14px 44px rgba(58, 198, 60, 0.35);
 }
 
 /* ── Service page responsive ── */
@@ -6347,10 +6346,11 @@ body {
 .wpp-float__bubble p {
   color: #07152c;
   margin: 0;
+  font-weight: 700;
 }
 
 .wpp-float__bubble strong {
-  color: #25d366;
+  color: #3ac63c;
 }
 
 .wpp-float__bubble-close {
@@ -6375,15 +6375,15 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #34d22f 0%, #45d92f 100%);
-  box-shadow: 0 6px 24px rgba(52, 210, 47, 0.4);
+  background: #3ac63c;
+  box-shadow: 0 6px 24px rgba(58, 198, 60, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: wpp-pulse 2s ease-in-out infinite;
 }
 
 .wpp-float__btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 8px 32px rgba(52, 210, 47, 0.5);
+  box-shadow: 0 8px 32px rgba(58, 198, 60, 0.5);
 }
 
 @keyframes wpp-bubble-in {
@@ -6398,6 +6398,6 @@ body {
 }
 
 @keyframes wpp-pulse {
-  0%, 100% { box-shadow: 0 6px 24px rgba(52, 210, 47, 0.4); }
-  50% { box-shadow: 0 6px 32px rgba(52, 210, 47, 0.6); }
+  0%, 100% { box-shadow: 0 6px 24px rgba(58, 198, 60, 0.4); }
+  50% { box-shadow: 0 6px 32px rgba(58, 198, 60, 0.6); }
 }

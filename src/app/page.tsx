@@ -396,6 +396,7 @@ export default function HomePage() {
             <Image
               alt="Apresentação em vídeo da Agência VFX"
               fill
+              priority
               sizes="(max-width: 900px) 100vw, 1000px"
               src="/assets/reference/fachada-vfx-wide-01.jpg"
             />
