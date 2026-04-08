@@ -3215,9 +3215,9 @@ body {
 .homev2__partner-item img,
 .homev2__enterprise-item img {
   width: auto;
-  max-width: 84%;
+  max-width: 95%;
   height: auto;
-  max-height: 76px;
+  max-height: 100px;
   object-fit: contain;
 }
 
@@ -4321,8 +4321,8 @@ body {
 
   .homev2__partner-item img,
   .homev2__enterprise-item img {
-    max-width: 90%;
-    max-height: 76px;
+    max-width: 95%;
+    max-height: 90px;
   }
 
   .homev2__trust-card-animation {

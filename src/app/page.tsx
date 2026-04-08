@@ -418,10 +418,10 @@ export default function HomePage() {
             >
               <Image
                 alt={item.title}
-                height={120}
-                sizes="(max-width: 768px) 45vw, 20vw"
+                height={160}
+                sizes="(max-width: 768px) 45vw, 22vw"
                 src={item.image}
-                width={240}
+                width={320}
               />
             </Reveal>
           ))}
