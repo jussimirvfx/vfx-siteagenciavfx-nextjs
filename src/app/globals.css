@@ -789,7 +789,10 @@ img {
   }
 
   .site-header__actions .button {
-    display: none;
+    display: inline-flex;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.82rem;
   }
 
   .site-header__menu-button {
@@ -2531,22 +2534,20 @@ body {
 }
 
 .site-header--home {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   border-bottom-color: transparent;
   background: transparent;
   backdrop-filter: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
   transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
     background 0.25s ease,
     border-color 0.25s ease,
     backdrop-filter 0.25s ease;
-}
-
-@media only screen and (min-width: 691px) and (prefers-reduced-motion: no-preference) {
-  .site-header--home {
-    opacity: 0.01;
-    animation: homev2-header-entrance 1.5s ease 0.6s forwards;
-  }
 }
 
 .site-header--home .site-header__inner {
@@ -2605,6 +2606,9 @@ body {
 
 .site-header--home.site-header--home-scrolled {
   position: fixed;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
   border-bottom: 1px solid rgba(7, 21, 44, 0.08);
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
@@ -3143,6 +3147,53 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Lazy video play/pause overlay */
+.lazy-video-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.lazy-video-play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lazy-video-play-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: inherit;
+  transition: opacity 0.25s ease;
+  opacity: 0;
+}
+
+.lazy-video-wrap:hover .lazy-video-play-btn,
+.lazy-video-wrap--paused .lazy-video-play-btn {
+  opacity: 1;
+}
+
+.lazy-video-wrap:hover .lazy-video-play-btn::before,
+.lazy-video-wrap--paused .lazy-video-play-btn::before {
+  opacity: 1;
+}
+
+.lazy-video-play-btn svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
 
 .homev2__feature-media img,
