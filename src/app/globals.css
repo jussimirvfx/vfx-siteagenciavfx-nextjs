@@ -2746,6 +2746,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-height: 52px;
   padding: 0 32px;
   border-radius: 999px;
@@ -3073,6 +3074,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-height: 48px;
   padding: 0 26px;
   border-radius: 999px;
@@ -6428,4 +6430,99 @@ body {
   .sv-cta {
     padding: 80px 0;
   }
+}
+
+.wpp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.wpp-float__bubble {
+  position: relative;
+  max-width: 260px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  color: #07152c;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  animation: wpp-bubble-in 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wpp-float__bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 28px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 0 0 4px;
+  transform: rotate(45deg);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.wpp-float__bubble p {
+  color: #07152c;
+  margin: 0;
+}
+
+.wpp-float__bubble strong {
+  color: #25d366;
+}
+
+.wpp-float__bubble-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: none;
+  color: #999;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.wpp-float__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: #25d366;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: wpp-pulse 2s ease-in-out infinite;
+}
+
+.wpp-float__btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes wpp-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes wpp-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 6px 32px rgba(37, 211, 102, 0.6); }
 }

@@ -43,6 +43,17 @@ export function LazyVideo({
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const video = ref.current;
+
+    if (!isNear || !video) {
+      return;
+    }
+
+    video.load();
+    video.play().catch(() => {});
+  }, [isNear]);
+
   const togglePlay = useCallback(() => {
     const video = ref.current;
     if (!video) return;
@@ -65,7 +76,6 @@ export function LazyVideo({
         ref={ref}
         aria-hidden={ariaHidden}
         aria-label={ariaLabel}
-        autoPlay={isNear}
         className={className}
         loop
         muted
