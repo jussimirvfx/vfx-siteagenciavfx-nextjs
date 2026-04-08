@@ -58,9 +58,11 @@ export function SiteHeader() {
     };
   }, [isTransparent, updateScrollClass]);
 
-  const buttonClass = isCaseFumil
-    ? "button--whatsapp"
-    : "button--header-home";
+  const buttonClass = isHome
+    ? "button--header-home"
+    : isCaseFumil
+      ? "button--whatsapp"
+      : "button--primary";
 
   return (
     <header

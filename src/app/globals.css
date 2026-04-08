@@ -2509,16 +2509,25 @@ body {
   }
 }
 
-.button--header-home,
-.button--header-home-top {
+.button--header-home {
   min-height: 38px;
   padding: 0 18px;
   border-radius: 14px;
-  color: #fff;
-  background: #25d366;
   font-size: 0.88rem;
   font-weight: 700;
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.button--header-home-top,
+.site-header--home-scrolled .button--header-home {
+  color: #fff;
+  background: linear-gradient(135deg, #34d22f 0%, #45d92f 100%);
+  border-radius: 14px;
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 8px 20px rgba(52, 210, 47, 0.28);
 }
 
 .site-header--home {
