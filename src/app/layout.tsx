@@ -54,10 +54,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: {
-    icon: "/assets/brand/icon.png",
-    apple: "/assets/brand/icon.png",
-  },
 };
 
 export default function RootLayout({
