@@ -99,7 +99,7 @@ const partnerLogos = [
 ] as const;
 
 const featureSections: ReadonlyArray<{
-  title: string;
+  title: ReactNode;
   body: string;
   image: string;
   imageAlt: string;
@@ -118,7 +118,12 @@ const featureSections: ReadonlyArray<{
     reverse: false,
   },
   {
-    title: "Vídeos + Anúncios + Whatsapp = A combinação de marketing perfeita.",
+    title: (
+      <>
+        Vídeos + Anúncios + Whatsapp =
+        <br />A combinação de marketing perfeita.
+      </>
+    ),
     body:
       "Utilize vídeos, que são a melhor ferramenta de vendas da atualidade, combinados com anúncios para mostrar esses vídeos ao seu público e deixe a automação do WhatsApp fazer o atendimento inicial e a qualificação desses leads.",
     image: "/assets/reference/celular-bg-video-bot-1.webp",
@@ -153,7 +158,7 @@ const serviceCards = [
     image: "/assets/reference/portfolio-2.jpg",
   },
   {
-    title: "Campanhas de Anúncios",
+    title: "Tráfego Pago",
     description:
       "Sua empresa precisa aparecer para o público certo. Estruturamos campanhas para gerar visibilidade, leads e vendas com retorno rápido.",
     image: "/assets/reference/trafego-4.jpg",
@@ -468,7 +473,7 @@ export default function HomePage() {
           className={`homev2__feature${
             section.reverse ? " homev2__feature--reverse" : ""
           }${section.surface === "soft" ? " homev2__feature--soft" : ""}`}
-          key={section.title}
+          key={section.image}
         >
           <div className="section__inner homev2__feature-inner">
             <Reveal as="div" className="homev2__feature-media" variant="grow">
