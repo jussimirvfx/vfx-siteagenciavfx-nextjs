@@ -58,6 +58,35 @@ const nextConfig: NextConfig = {
         destination: "/contato",
         permanent: true,
       },
+      {
+        source: "/briefing",
+        destination:
+          "https://docs.google.com/forms/d/e/1FAIpQLScpWnabKvlN2hfQhNsu1jXWwmM4FjNj-nkWoJ30Kfl1wYxwGw/viewform?usp=sf_link",
+        permanent: true,
+      },
+      {
+        source: "/briefinglandingpage",
+        destination:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdoZaB53jidINDex32cxPEy8B2iRpWm4uplcYiIF1q0p4IKIw/viewform",
+        permanent: true,
+      },
+      {
+        source: "/briefingchatbot",
+        destination:
+          "https://docs.google.com/forms/d/e/1FAIpQLScilT0-mnvfEpfK0to5PYXpxTLOwcIZWPpGCzx3liX6d76MxA/viewform?usp=sf_link",
+        permanent: true,
+      },
+      {
+        source: "/briefingchatbotcaptacao",
+        destination:
+          "https://docs.google.com/forms/d/e/1FAIpQLSd7qcwSjPnPJ5mqZS16R3VR8Z0nDCDyt792o8wbBX-OEsLuAQ/viewform",
+        permanent: true,
+      },
+      {
+        source: "/vagas",
+        destination: "https://agenciavfx.vagas.solides.com.br/vaga/289245",
+        permanent: true,
+      },
     ];
   },
 };
