@@ -5615,6 +5615,14 @@ body {
   object-fit: cover;
 }
 
+.sv-hero__bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .sv-hero__overlay {
   position: absolute;
   inset: 0;
@@ -6215,6 +6223,267 @@ body {
   box-shadow: 0 14px 44px rgba(58, 198, 60, 0.35);
 }
 
+/* ── Tráfego Pago — portfolio compact ── */
+
+.tp-portfolio {
+  padding: 100px 0;
+  background: var(--surface-soft);
+}
+
+.tp-portfolio__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.tp-portfolio__header h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--foreground);
+}
+
+.tp-portfolio__header > p {
+  font-size: 1.05rem;
+}
+
+.tp-portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.tp-portfolio__card {
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tp-portfolio__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.tp-portfolio__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.tp-portfolio__media img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tp-portfolio__card:hover .tp-portfolio__media img {
+  transform: scale(1.04);
+}
+
+.tp-portfolio__card h3 {
+  padding: 14px 18px 16px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+
+/* ── Tráfego Pago — results ── */
+
+.tp-results {
+  padding: 100px 0;
+  background: var(--surface-dark);
+  overflow: hidden;
+}
+
+.tp-results__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.tp-results .sv-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tp-results__value {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tp-results__desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tp-results__side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tp-results__stat {
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.tp-results__stat strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.tp-results__stat span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+}
+
+/* ── Tráfego Pago — service cards & benefits ── */
+
+.tp-services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.tp-services__card {
+  display: flex;
+  gap: 24px;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tp-services__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.tp-services__icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.tp-services__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.tp-services__copy h3 {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+
+.tp-services__subtitle {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tp-services__copy p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ── Benefits ── */
+.tp-benefits {
+  padding: 100px 0;
+  background: var(--surface-soft);
+}
+
+.tp-benefits__header {
+  max-width: 700px;
+  margin-bottom: 56px;
+}
+
+.tp-benefits__header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--foreground);
+}
+
+.tp-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.tp-benefits__card {
+  display: flex;
+  gap: 20px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tp-benefits__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.tp-benefits__check {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(62, 198, 65, 0.12);
+  color: #3ec641;
+  margin-top: 2px;
+}
+
+.tp-benefits__check svg {
+  width: 18px;
+  height: 18px;
+}
+
+.tp-benefits__card h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+
+.tp-benefits__card p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
 /* ── Service page responsive ── */
 @media (max-width: 1024px) {
   .sv-hero__inner {
@@ -6239,6 +6508,31 @@ body {
   }
 
   .sv-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-results__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tp-results__side {
+    flex-direction: row;
+  }
+
+  .tp-results__stat {
+    flex: 1;
+  }
+
+  .tp-portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tp-services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-benefits__grid {
     grid-template-columns: 1fr;
   }
 }
@@ -6303,6 +6597,37 @@ body {
 
   .sv-cta {
     padding: 80px 0;
+  }
+
+  .tp-results {
+    padding: 72px 0;
+  }
+
+  .tp-results__side {
+    flex-direction: column;
+  }
+
+  .tp-results__stat {
+    padding: 28px 24px;
+  }
+
+  .tp-portfolio {
+    padding: 72px 0;
+  }
+
+  .tp-services__card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px;
+  }
+
+  .tp-benefits {
+    padding: 72px 0;
+  }
+
+  .tp-benefits__card {
+    padding: 24px;
+    gap: 16px;
   }
 }
 

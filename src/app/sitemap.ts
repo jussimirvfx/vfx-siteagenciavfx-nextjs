@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contato",
     "/politica-de-privacidade",
     "/termos-de-servico",
+    "/solucoes/videos-marketing",
+    "/solucoes/trafego-pago",
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: now,

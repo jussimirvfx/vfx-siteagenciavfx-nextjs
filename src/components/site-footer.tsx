@@ -19,7 +19,7 @@ export function SiteFooter() {
                 <Link href="/solucoes/videos-marketing">Vídeos Marketing</Link>
               </li>
               <li>
-                <Link href="/#services">Campanhas de Anúncios</Link>
+                <Link href="/solucoes/trafego-pago">Tráfego Pago</Link>
               </li>
               <li>
                 <Link href="/#services">Landing Pages</Link>
