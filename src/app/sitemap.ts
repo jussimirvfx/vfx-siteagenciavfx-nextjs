@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/contato",
     "/politica-de-privacidade",
+    "/termos-de-servico",
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: now,

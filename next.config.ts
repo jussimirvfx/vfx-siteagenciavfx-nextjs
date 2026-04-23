@@ -87,6 +87,16 @@ const nextConfig: NextConfig = {
         destination: "https://agenciavfx.vagas.solides.com.br/vaga/289245",
         permanent: true,
       },
+      {
+        source: "/politica-privacidade",
+        destination: "/politica-de-privacidade",
+        permanent: true,
+      },
+      {
+        source: "/termos-servico",
+        destination: "/termos-de-servico",
+        permanent: true,
+      },
     ];
   },
 };

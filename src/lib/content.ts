@@ -439,3 +439,87 @@ export const privacyPolicySections = [
       "Solicitacoes relacionadas a privacidade podem ser encaminhadas para contato@vfxvideos.com.br ou pelo canal comercial oficial da Agencia VFX.",
   },
 ];
+
+export const termsOfServiceSections = [
+  {
+    title: "1. Aceitacao dos termos",
+    body:
+      "Ao contratar, acessar ou utilizar qualquer servico prestado pela Agencia VFX, o cliente declara estar ciente e de acordo com as condicoes descritas nestes Termos de Servico. Caso nao concorde com alguma clausula, a recomendacao e que a contratacao nao seja efetivada.",
+  },
+  {
+    title: "2. Servicos prestados",
+    body:
+      "A Agencia VFX atua com producao audiovisual, videos de marketing, trafego pago, landing pages e automacao de marketing com WhatsApp, alem de outras solucoes correlatas que possam ser formalizadas em proposta comercial.",
+    bullets: [
+      "Producao e edicao de videos para marketing, vendas e institucional.",
+      "Planejamento e gestao de campanhas de trafego pago.",
+      "Criacao de landing pages orientadas a conversao.",
+      "Automacoes de marketing e atendimento com WhatsApp e chatbots.",
+    ],
+  },
+  {
+    title: "3. Escopo e proposta comercial",
+    body:
+      "Cada projeto e regido por uma proposta comercial especifica, que detalha escopo, entregaveis, prazos, valores e condicoes de pagamento. A proposta aceita pelo cliente passa a integrar e complementar estes Termos de Servico.",
+  },
+  {
+    title: "4. Responsabilidades do cliente",
+    body:
+      "Para a boa execucao do projeto, o cliente se compromete a fornecer informacoes, materiais, aprovacoes e retornos dentro dos prazos acordados, alem de garantir que os conteudos enviados nao violem direitos de terceiros.",
+  },
+  {
+    title: "5. Responsabilidades da Agencia VFX",
+    body:
+      "A Agencia VFX se compromete a conduzir os trabalhos com diligencia tecnica, transparencia e confidencialidade, seguindo o escopo da proposta aprovada e comunicando previamente qualquer ajuste relevante no planejamento.",
+  },
+  {
+    title: "6. Prazos e cronograma",
+    body:
+      "Os prazos informados sao estimados e podem variar conforme complexidade do projeto, aprovacoes do cliente, disponibilidade de insumos e eventuais solicitacoes adicionais feitas durante a execucao.",
+  },
+  {
+    title: "7. Pagamentos",
+    body:
+      "As condicoes de pagamento seguem o descrito na proposta comercial aceita. Atrasos podem implicar em suspensao temporaria dos servicos, acrescimos legais e, em casos recorrentes, encerramento do contrato.",
+  },
+  {
+    title: "8. Propriedade intelectual",
+    body:
+      "Apos a quitacao integral dos valores acordados, o cliente recebe o direito de uso das entregas finais conforme o escopo da proposta. Arquivos brutos, projetos-fonte e licencas de terceiros permanecem regidos por condicoes especificas descritas em contrato.",
+  },
+  {
+    title: "9. Confidencialidade",
+    body:
+      "Informacoes estrategicas, comerciais e operacionais trocadas durante o relacionamento sao tratadas com sigilo pelas partes e nao podem ser divulgadas a terceiros sem autorizacao, salvo quando exigidas por obrigacao legal.",
+  },
+  {
+    title: "10. Ausencia de garantia de resultados",
+    body:
+      "A Agencia VFX nao oferece nenhuma garantia de resultados comerciais, financeiros, de vendas, de faturamento, de audiencia, de engajamento ou de performance em plataformas de terceiros. Eventuais numeros, cases, estimativas e projecoes citados em propostas, reunioes, campanhas ou no proprio site sao referencias ilustrativas baseadas em experiencias anteriores e nao representam qualquer compromisso de retorno futuro.",
+  },
+  {
+    title: "11. Carater informativo dos textos do site",
+    body:
+      "Todos os textos, numeros, depoimentos, cases e materiais publicados no site da Agencia VFX tem carater exclusivamente informativo e de divulgacao institucional. Nada do que esta publicado nestas paginas constitui promessa, oferta vinculante ou garantia contratual. As condicoes efetivas de qualquer servico serao sempre as descritas na proposta comercial aceita pelo cliente.",
+  },
+  {
+    title: "12. Limitacao de responsabilidade",
+    body:
+      "A Agencia VFX nao se responsabiliza por performance de plataformas de terceiros (como redes sociais, ferramentas de anuncio, provedores de hospedagem e integracoes externas), por decisoes comerciais tomadas pelo cliente a partir das entregas, nem por eventos de forca maior fora do seu controle razoavel.",
+  },
+  {
+    title: "13. Cancelamento e rescisao",
+    body:
+      "Qualquer das partes pode encerrar o relacionamento mediante comunicacao formal, respeitando as condicoes e eventuais multas descritas na proposta comercial, alem do pagamento proporcional aos servicos ja executados.",
+  },
+  {
+    title: "14. Alteracoes destes termos",
+    body:
+      "Estes Termos de Servico podem ser atualizados a qualquer momento para refletir melhorias na operacao, exigencias legais ou mudancas no portfolio de servicos. A versao vigente sempre sera a publicada nesta pagina.",
+  },
+  {
+    title: "15. Contato",
+    body:
+      "Duvidas sobre estes Termos de Servico podem ser encaminhadas para contato@vfxvideos.com.br ou pelo canal comercial oficial da Agencia VFX.",
+  },
+];
