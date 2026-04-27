@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Schema } from "@/components/schema";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SiteShell } from "@/components/site-shell";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import {
   buildOrganizationSchema,
@@ -81,12 +82,13 @@ export default function RootLayout({
       <body>
         <Schema id="schema-organization" data={buildOrganizationSchema()} />
         <Schema id="schema-website" data={buildWebsiteSchema()} />
-        <div className="site-shell">
-          <SiteHeader />
+        <SiteShell
+          header={<SiteHeader />}
+          footer={<SiteFooter />}
+          whatsapp={<WhatsAppFloat />}
+        >
           {children}
-          <SiteFooter />
-        </div>
-        <WhatsAppFloat />
+        </SiteShell>
         <Analytics />
       </body>
     </html>
