@@ -45,7 +45,7 @@ export function SiteFooter() {
           <WhatsAppLink className="site-footer__bottom-cta">
             Agende uma reunião
           </WhatsAppLink>
-          <p>{new Date().getFullYear()}, copywriting VFX Videos. Todos os direitos reservados.</p>
+          <p>{new Date().getFullYear()}, Agência VFX. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
